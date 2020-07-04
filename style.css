@@ -1,0 +1,24 @@
+body {
+    background-color: black;
+    font-family: 'Orbitron', sans-serif;
+    color: chartreuse;
+}
+
+.navbar-brand {
+    color: chartreuse;
+}
+
+h1 {
+    text-align: center;
+}
+
+div {
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: chartreuse;
+    color: black;
+    font-family: 'Orbitron', sans-serif;
+    border: chartreuse;
+}

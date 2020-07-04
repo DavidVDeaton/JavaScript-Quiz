@@ -8,6 +8,11 @@ body {
     color: chartreuse;
 }
 
+.content {
+    min-height: calc(90vh - 50px);
+    text-align: center;
+}
+
 h1 {
     text-align: center;
 }
@@ -16,9 +21,18 @@ div {
     text-align: center;
 }
 
+p {
+    font-size: 200px;
+}
+
 .btn-primary {
     background-color: chartreuse;
     color: black;
     font-family: 'Orbitron', sans-serif;
     border: chartreuse;
+}
+
+footer {
+    height: 50px;
+    font-size: 24px;
 }

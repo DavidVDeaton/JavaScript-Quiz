@@ -1,8 +1,7 @@
 var startQuiz = document.getElementById("start");
 var display = document.getElementById("display");
-var timer = 10;
+var timer = 16;
 var preTimer = 5.5;
-var disappear = document.getElementsByClassName("disappear");
 
 startQuiz.addEventListener("click", function() {
 
@@ -12,30 +11,22 @@ startQuiz.addEventListener("click", function() {
     var footTimer = document.getElementById("footer");
     footTimer.textContent = "Timer: " + timer;
 
-
-    var preTimerInterval = setInterval(function() {
+    setInterval(function() {
     preTimer--;
 
-    if(preTimer >= 4) {
+    if (preTimer >= 4) {
        display.textContent = "Start!";
     }
 
-    else if (preTimer < 4) {
+    else if (preTimer < 4 && timer > 0) {
         display.textContent = "";
         timer--;
         footTimer.textContent = "Timer: " + timer;
-
-        if (timer <= 0) {
-            display.textContent = "Failure!"
-        }
     }
-      
 
-       
-    
+    else {
+        display.textContent = "Failure!"
+    } 
+        
     },1000);
-   
-
-   
-  
 });

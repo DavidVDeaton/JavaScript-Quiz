@@ -21,8 +21,20 @@ div {
     text-align: center;
 }
 
-p {
+#display {
     font-size: 200px;
+}
+
+#questionDis {
+    font-size: 32px;
+}
+
+.list-group-item {
+    background-color: black;
+}
+
+.list-group-item-action {
+    color: chartreuse;
 }
 
 .btn-primary {

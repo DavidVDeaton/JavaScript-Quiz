@@ -25,19 +25,33 @@ div {
     font-size: 200px;
 }
 
+#rules {
+    font-size:36px;
+}
+
 #questionDis {
     font-size: 32px;
 }
 
-.list-group-item {
-    background-color: black;
+#a {
+    font-size: 22px;
 }
 
-.list-group-item-action {
-    color: chartreuse;
+#b {
+    font-size: 22px;
 }
+
+#c {
+    font-size: 22px;
+}
+
+#d {
+    font-size: 22px;
+}
+
 
 .btn-primary {
+    margin: 10px;
     background-color: chartreuse;
     color: black;
     font-family: 'Orbitron', sans-serif;

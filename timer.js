@@ -1,13 +1,10 @@
 var startTimer = document.getElementById("start");
 var display = document.getElementById("display");
-var rules = document.getElementById("rules");
 var preTimer = 17;
 var correct = 0;
 var incorrect = 0;
 var qNum = 0;
-var add = 0;
-var sub = 0;
-var timer = 90;
+var timer = 0;
 
 startTimer.addEventListener("click", function() {
 
@@ -29,14 +26,16 @@ startTimer.addEventListener("click", function() {
     var answerB = document.getElementById("b");
     var answerC = document.getElementById("c");
     var answerD = document.getElementById("d");
+    var answerE = document.getElementById("e");
     
     if (preTimer >= 6) {
         display.textContent = "";
-        qDis.textContent = "Rules";
-        answerA.textContent = "10 Questions";
-        answerB.textContent = "+3 Seconds for every correct answer";
-        answerC.textContent = "-15 Seconds for every wrong answer";
-        answerD.textContent = "Score = Time left on the clock";    
+        qDis.textContent = "Rules:";
+        answerA.textContent = "90 Seconds";
+        answerB.textContent = "10 Questions";
+        answerC.textContent = "+3 Seconds for every correct answer";
+        answerD.textContent = "-15 Seconds for every wrong answer";
+        answerE.textContent = "Score = Time left on the clock";    
     }
 
     else if (preTimer < 6 && preTimer >= 4) {
@@ -46,6 +45,8 @@ startTimer.addEventListener("click", function() {
         answerB.textContent = "";
         answerC.textContent = "";
         answerD.textContent = "";
+        answerE.textContent = "";
+        timer = 90;
         start.play();
     }
 
@@ -69,9 +70,16 @@ startTimer.addEventListener("click", function() {
         answerA.textContent = question[10].choices[0];
         answerB.textContent = question[10].choices[1];
         answerC.textContent = question[10].choices[1];
-        answerD.textContent = question[10].choices[1]; 
+        answerD.textContent = question[10].choices[1];
+        answerE.textContent = "Score: " + timer;
+        
         tick.pause();
         winner.play();
+
+        var highscore = document.getElementById("playerName");
+        highscore.setAttribute("class", "form-group");
+        
+      
     }
 
     else {

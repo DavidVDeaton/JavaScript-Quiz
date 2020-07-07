@@ -51,12 +51,32 @@ div {
     font-size: 22px;
 }
 
-#e {
+#introA {
+    font-size: 22px;
+}
+
+#introB {
+    font-size: 22px;
+}
+
+#introC {
+    font-size: 22px;
+}
+
+#introD {
+    font-size: 22px;
+}
+
+#introE {
     font-size: 22px;
 }
 
 .hidden {
     opacity:0;
+}
+
+.visible {
+    opacity:1;
 }
 
 .form-group {

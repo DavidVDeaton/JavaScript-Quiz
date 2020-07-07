@@ -1,6 +1,9 @@
 var startTimer = document.getElementById("start");
 var display = document.getElementById("display");
-var preTimer = 17;
+var rules = document.getElementById("rules");
+var inputName = document.getElementById("textInput");
+var submitButton = document.getElementById("signIn");
+var preTimer = 16.5;
 var correct = 0;
 var incorrect = 0;
 var qNum = 0;
@@ -17,35 +20,38 @@ startTimer.addEventListener("click", function() {
     var failure = new Audio (src = "zapsplat_explosion_fire_burst_backdraft_004_44091.mp3");
     var winner = new Audio (src = "ftus_american_football_fans_applause_scream_cheer_usa_high_school_238.mp3");
     var start = new Audio (src = "sport_air_horn_reverb.mp3");
+    var welcome = new Audio (src = "audeption_countdown_intro_ten_to_zero-the_show_starts_voice_solo_007.mp3");
 
     setInterval(function() {
     preTimer--;
 
     var qDis = document.getElementById("questionDis");
-    var answerA = document.getElementById("a");
-    var answerB = document.getElementById("b");
-    var answerC = document.getElementById("c");
-    var answerD = document.getElementById("d");
-    var answerE = document.getElementById("e");
+    var introA = document.getElementById("introA");
+    var introB = document.getElementById("introB");
+    var introC = document.getElementById("introC");
+    var introD = document.getElementById("introD");
+    var introE = document.getElementById("introE");
     
     if (preTimer >= 6) {
+        welcome.play();
         display.textContent = "";
-        qDis.textContent = "Rules:";
-        answerA.textContent = "90 Seconds";
-        answerB.textContent = "10 Questions";
-        answerC.textContent = "+3 Seconds for every correct answer";
-        answerD.textContent = "-15 Seconds for every wrong answer";
-        answerE.textContent = "Score = Time left on the clock";    
+        rules.textContent = "Rules:";
+        introA.textContent = "90 Seconds";
+        introB.textContent = "10 Questions";
+        introC.textContent = "+3 Seconds for every correct answer";
+        introD.textContent = "-15 Seconds for every wrong answer";
+        introE.textContent = "Score = Time left on the clock";    
     }
 
     else if (preTimer < 6 && preTimer >= 4) {
         display.textContent = "Start!";
-        qDis.textContent = "";
-        answerA.textContent = "";
-        answerB.textContent = "";
-        answerC.textContent = "";
-        answerD.textContent = "";
-        answerE.textContent = "";
+        welcome.pause();
+        rules.textContent = "";
+        introA.textContent = "";
+        introB.textContent = "";
+        introC.textContent = "";
+        introD.textContent = "";
+        introE.textContent = "";
         timer = 90;
         start.play();
     }
@@ -57,29 +63,27 @@ startTimer.addEventListener("click", function() {
         footTimer.textContent = "Time: " + timer;
         
         qDis.textContent = question[qNum].title;
-        answerA.textContent = question[qNum].choices[0];
-        answerB.textContent = question[qNum].choices[1];
-        answerC.textContent = question[qNum].choices[2];
-        answerD.textContent = question[qNum].choices[3];    
+        introA.textContent = question[qNum].choices[0];
+        introB.textContent = question[qNum].choices[1];
+        introC.textContent = question[qNum].choices[2];
+        introD.textContent = question[qNum].choices[3];    
     }
 
     else if (preTimer < 4 && timer > 0 && qNum === 10) {
         footTimer.textContent = "Time: " + timer;
         display.textContent = "Winner!";
         qDis.textContent = question[10].title;
-        answerA.textContent = question[10].choices[0];
-        answerB.textContent = question[10].choices[1];
-        answerC.textContent = question[10].choices[1];
-        answerD.textContent = question[10].choices[1];
-        answerE.textContent = "Score: " + timer;
+        introA.textContent = question[10].choices[0];
+        introB.textContent = question[10].choices[1];
+        introC.textContent = question[10].choices[1];
+        introD.textContent = question[10].choices[1];
+        rules.textContent = "Score: " + timer;
         
         tick.pause();
         winner.play();
 
-        var highscore = document.getElementById("playerName");
-        highscore.setAttribute("class", "form-group");
-        
-      
+        var highscore = document.getElementById("playerSubmission");
+        highscore.setAttribute("class", "form-group");   
     }
 
     else {
@@ -88,18 +92,18 @@ startTimer.addEventListener("click", function() {
         tick.pause();
         failure.play();
         qDis.textContent = question[10].title;
-        answerA.textContent = question[10].choices[0];
-        answerB.textContent = question[10].choices[1];
-        answerC.textContent = question[10].choices[1];
-        answerD.textContent = question[10].choices[1];   
+        introA.textContent = question[10].choices[0];
+        introB.textContent = question[10].choices[1];
+        introC.textContent = question[10].choices[1];
+        introD.textContent = question[10].choices[1];   
     } 
         
     },1000);
 
-    document.getElementById("a").onclick = function () {submitA()};
-    document.getElementById("b").onclick = function () {submitB()};
-    document.getElementById("c").onclick = function () {submitC()};
-    document.getElementById("d").onclick = function () {submitD()};
+    document.getElementById("introA").onclick = function () {submitA()};
+    document.getElementById("introB").onclick = function () {submitB()};
+    document.getElementById("introC").onclick = function () {submitC()};
+    document.getElementById("introD").onclick = function () {submitD()};
 
     var correctAudio = new Audio(src = "zapsplat_cartoon_xylophone_short_fast_ascend_002_53041.mp3");
     var incorrectAudio = new Audio(src ="spa_clay_pots_clay_pot_small_break_03.mp3");
@@ -168,6 +172,30 @@ startTimer.addEventListener("click", function() {
         qNum++;
     };
 
+    submitButton.addEventListener("click", function (){
+        
+        var player = {
+            playerName: inputName.value.trim(),
+            score: timer,
+        };
+
+            if(player.playerName === "") {
+                alert("Error: Name cannot be blank");
+            }
+            else {
+                alert("Success: View Highscores");
+
+                console.log(player);
+                localStorage.setItem("player", player);
+            }
+        
+        var removeSubmission = document.getElementById("playerSubmission");
+        removeSubmission.parentNode.removeChild(removeSubmission);
+
+    });
+
 });
+
+
 
 

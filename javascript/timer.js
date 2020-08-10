@@ -3,7 +3,9 @@ var display = document.getElementById("display");
 var rules = document.getElementById("rules");
 var inputName = document.getElementById("textInput");
 var submitButton = document.getElementById("signIn");
+var viewHighScores = document.getElementById("scores")
 var preTimer = 16.5;
+var attempts = 0
 var correct = 0;
 var incorrect = 0;
 var qNum = 0;
@@ -16,11 +18,11 @@ startTimer.addEventListener("click", function() {
     var footTimer = document.getElementById("footer");
     footTimer.textContent = "Time: " + timer;
 
-    var tick = new Audio (src = "aaj_0589_ClockTick01.mp3");
-    var failure = new Audio (src = "zapsplat_explosion_fire_burst_backdraft_004_44091.mp3");
-    var winner = new Audio (src = "ftus_american_football_fans_applause_scream_cheer_usa_high_school_238.mp3");
-    var start = new Audio (src = "sport_air_horn_reverb.mp3");
-    var welcome = new Audio (src = "audeption_countdown_intro_ten_to_zero-the_show_starts_voice_solo_007.mp3");
+    var tick = new Audio (src = "audio/aaj_0589_ClockTick01.mp3");
+    var failure = new Audio (src = "audio/zapsplat_explosion_fire_burst_backdraft_004_44091.mp3");
+    var winner = new Audio (src = "audio/ftus_american_football_fans_applause_scream_cheer_usa_high_school_238.mp3");
+    var start = new Audio (src = "audio/sport_air_horn_reverb.mp3");
+    var welcome = new Audio (src = "audio/audeption_countdown_intro_ten_to_zero-the_show_starts_voice_solo_007.mp3");
 
     setInterval(function() {
     preTimer--;
@@ -105,8 +107,8 @@ startTimer.addEventListener("click", function() {
     document.getElementById("introC").onclick = function () {submitC()};
     document.getElementById("introD").onclick = function () {submitD()};
 
-    var correctAudio = new Audio(src = "zapsplat_cartoon_xylophone_short_fast_ascend_002_53041.mp3");
-    var incorrectAudio = new Audio(src ="spa_clay_pots_clay_pot_small_break_03.mp3");
+    var correctAudio = new Audio(src = "audio/zapsplat_cartoon_xylophone_short_fast_ascend_002_53041.mp3");
+    var incorrectAudio = new Audio(src ="audio/spa_clay_pots_clay_pot_small_break_03.mp3");
 
     function submitA () {
         if (question[qNum].choices[0] === question[qNum].answer) {
@@ -174,25 +176,33 @@ startTimer.addEventListener("click", function() {
 
     submitButton.addEventListener("click", function (){
         
-        var player = {
-            playerName: inputName.value.trim(),
-            score: timer,
-        };
+        var player = inputName.value.trim();
+        var score = timer;
+        var playerAndScore = player + ": " + score;
 
-            if(player.playerName === "") {
+            if(player === "") {
                 alert("Error: Name cannot be blank");
             }
             else {
                 alert("Success: View Highscores");
 
-                console.log(player);
-                localStorage.setItem("player", player);
+                localStorage.setItem("player" + attempts, playerAndScore);
             }
         
         var removeSubmission = document.getElementById("playerSubmission");
         removeSubmission.parentNode.removeChild(removeSubmission);
 
     });
+});
+
+viewHighScores.addEventListener("click", function() {
+
+$("scoresModal").modal("show");
+
+var scoresDisplay = localStorage.getItem("player1");
+$(".modal-content").text(scoresDisplay);
+
+
 
 });
 

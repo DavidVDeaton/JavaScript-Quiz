@@ -2,7 +2,7 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
-    <title>Password Generator</title>
+    <title>JavaScript Quiz</title>
 
     <link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity = "sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin = "anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
@@ -12,8 +12,10 @@
 
   <body>
 
-    <nav class = "navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg">
+      <a href="highscore.html">
         <button type = "button" data-toggle = "modal" data-target = ".bd-example-modal-lg" id = "scores" class = "btn btn-primary btn-lg" >View Highscores</button>
+      </a>
     </nav>
 
     <br>
@@ -22,42 +24,50 @@
       <div class="modal-dialog modal-lg">
         <h2>Highscores</h2>
         <div class="modal-content">
+          <p id="player"></p>
+          <p id="hScore"></p>
         </div>
       </div>
     </div>
 
-    <div class = "content" >
+    <div id="main" class="content">
         <h1>You Don't Know JavaScript!</h1>
 
         <br>
 
         <div id = "removeBtn">
+          <button type="button" class="btn btn-primary btn-lg" id="start" >Start Quiz</button>
+        </div>
 
-            <button type="button" class= "btn btn-primary btn-lg" id = "start" >Start Quiz</button>
-
-            
+        <div id = "rules" class="hidden"> 
+          <p id = "headerRule">Rules:</p>
+          <p class = "rule">90 Seconds</p>
+          <p class = "rule">10 questions</p>  
+          <p class = "rule">+3 Seconds for every correct answer</p>
+          <p class = "rule">-15 Seconds for every wrong answer</p>
+          <p class = "rule">Score = Time left on the clock</p>            
         </div>
 
         <div>
-          <p id = "display" ></p>
-          <p id = "questionDis"></p>
-          <p id = "rules"></p>
-          <p id = "introA" ></p>  
-          <p id = "introB" ></p>
-          <p id = "introC" ></p>
-          <p id = "introD" ></p>
-          <p id = "introE" ></p>
-            
+          <p id= "displayStart" class="hidden">Start!</p>
+        </div>
+
+        <div id ="questions" class="hidden"> 
+          <p id = "q" ></p>
+          <p><button type="button" class="btn btn-primary btn-lg qBtn" id = "a" ></button></p>
+          <p><button type="button" class="btn btn-primary btn-lg qBtn" id = "b" ></button></p>
+          <p><button type="button" class="btn btn-primary btn-lg qBtn" id = "c" ></button></p>
+          <p><button type="button" class="btn btn-primary btn-lg qBtn" id = "d" ></button></p>
         </div>
 
         <form>
 
-          <div id= "playerSubmission" class= "hidden">
+          <div id= "playerSubmission" class="hidden">
             <label for="textInput">Name</label>
             <br>
-            <input type="text" id = "textInput" class = "form-control">
+            <input type="text" id="textInput" class="form-group">
             <br>
-            <button type= "button" id = "signIn" class = "btn btn-primary btn-lg" >Submit</button>
+            <button type="button" id="signIn" class="btn btn-primary btn-lg" >Submit</button>
           </div>
         
         </form>
@@ -68,6 +78,7 @@
         <div id = "footer"></div>
     </footer>
     
+    <script src = "javascript/submitAnswer.js" ></script>
     <script src = "javascript/timer.js" ></script>
     <script src = "javascript/questions.js" ></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

@@ -23,15 +23,15 @@ div {
     text-align: center;
 }
 
-#display {
+#displayStart {
     font-size: 200px;
 }
 
-#rules {
+#headerRule {
     font-size:36px;
 }
 
-#questionDis {
+#q {
     font-size: 32px;
 }
 
@@ -51,8 +51,8 @@ div {
     font-size: 22px;
 }
 
-#introA {
-    font-size: 22px;
+.rule {
+    font-size: 28px;
 }
 
 #introB {
@@ -72,11 +72,11 @@ div {
 }
 
 .hidden {
-    opacity:0;
+    display: none;
 }
 
 .visible {
-    opacity:1;
+    display:block;
 }
 
 .form-group {

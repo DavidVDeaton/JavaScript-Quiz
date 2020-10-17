@@ -1,6 +1,4 @@
-var correctAudio = new Audio(src = "audio/zapsplat_cartoon_xylophone_short_fast_ascend_002_53041.mp3");
-var incorrectAudio = new Audio(src ="audio/spa_clay_pots_clay_pot_small_break_03.mp3");
-
+// Answer Click Logic
 function submitA () {
     if (question[qNum].choices[0] === question[qNum].answer) {
         correctAudio.play();
@@ -56,6 +54,3 @@ function submitD () {
 
     qNum++;
 };
-
-
-

@@ -66,7 +66,7 @@ var question = [
     },
 
     {
-        title: 'Refresh Page to Play Again',
+        title: 'Refresh Page to Play Again.',
         choices: ['', '', '', ''],
         answer: ''
     }

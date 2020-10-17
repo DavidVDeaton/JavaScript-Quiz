@@ -55,22 +55,6 @@ div {
     font-size: 28px;
 }
 
-#introB {
-    font-size: 22px;
-}
-
-#introC {
-    font-size: 22px;
-}
-
-#introD {
-    font-size: 22px;
-}
-
-#introE {
-    font-size: 22px;
-}
-
 #hs {
     font-size: 26px;
 }
@@ -84,7 +68,7 @@ div {
 }
 
 .form-group {
-    font-size: 22px;
+    font-size: 24px;
     width: 20%;
     margin: auto;
 }

@@ -1,3 +1,4 @@
+// Index Variables
 var startTimer = document.getElementById("start");
 var display = document.getElementById("displayStart");
 var rules = document.getElementById("rules");
@@ -5,14 +6,13 @@ var questions = document.getElementById("questions");
 var inputName = document.getElementById("textInput");
 var submitButton = document.getElementById("signIn");
 var submitForm  = document.getElementById("playerSubmission");
-var main = document.getElementById("main");
 var timer = 0;
 var qNum = 0;
 
+// Set Attempts Count
 if (localStorage.getItem("attempts") === null) {
     localStorage.setItem("attempts", 1);
 };
-
 
 // Question and Answer Variables
 var qDis = document.getElementById("q");
@@ -27,14 +27,10 @@ var start = new Audio (src = "audio/sport_air_horn_reverb.mp3");
 var welcome = new Audio (src = "audio/audeption_countdown_intro_ten_to_zero-the_show_starts_voice_solo_007.mp3");
 var failure = new Audio (src = "audio/zapsplat_explosion_fire_burst_backdraft_004_44091.mp3");
 var winner = new Audio (src = "audio/ftus_american_football_fans_applause_scream_cheer_usa_high_school_238.mp3");
+var correctAudio = new Audio(src = "audio/zapsplat_cartoon_xylophone_short_fast_ascend_002_53041.mp3");
+var incorrectAudio = new Audio(src ="audio/spa_clay_pots_clay_pot_small_break_03.mp3");
 
-// Highscore Variables
-var high1 = document.getElementById("high1");
-var high2 = document.getElementById("high2");
-var high3 = document.getElementById("high3");
-var high4 = document.getElementById("high4");
-var high5 = document.getElementById("high5");
-
+// Quiz Start and Timer Code
 startTimer.addEventListener("click", function() {
 
     var removeBtn = document.getElementById("removeBtn");
@@ -104,6 +100,7 @@ startTimer.addEventListener("click", function() {
    
 });
 
+// Quiz Click Functions
 introA.addEventListener("click", function() {
     submitA();
 });
@@ -120,6 +117,7 @@ introD.addEventListener("click", function() {
     submitD();
 });
 
+// Submit Highscore
 submitButton.addEventListener("click", function (){
 
     qNum++;

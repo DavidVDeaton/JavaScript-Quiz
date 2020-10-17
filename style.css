@@ -71,6 +71,10 @@ div {
     font-size: 22px;
 }
 
+#hs {
+    font-size: 26px;
+}
+
 .hidden {
     display: none;
 }

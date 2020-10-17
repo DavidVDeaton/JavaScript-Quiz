@@ -28,6 +28,13 @@ var welcome = new Audio (src = "audio/audeption_countdown_intro_ten_to_zero-the_
 var failure = new Audio (src = "audio/zapsplat_explosion_fire_burst_backdraft_004_44091.mp3");
 var winner = new Audio (src = "audio/ftus_american_football_fans_applause_scream_cheer_usa_high_school_238.mp3");
 
+// Highscore Variables
+var high1 = document.getElementById("high1");
+var high2 = document.getElementById("high2");
+var high3 = document.getElementById("high3");
+var high4 = document.getElementById("high4");
+var high5 = document.getElementById("high5");
+
 startTimer.addEventListener("click", function() {
 
     var removeBtn = document.getElementById("removeBtn");
@@ -130,7 +137,7 @@ submitButton.addEventListener("click", function (){
         localStorage.setItem("score" + attempts, score);
         display.textContent = "Start!";
         display.setAttribute("class", "hidden");
-        qDis.textContent = "Refresh Page to Play Again.";
+        submitButton.setAttribute("class", "hidden");
 
     }
     
@@ -138,26 +145,4 @@ submitButton.addEventListener("click", function (){
     localStorage.setItem("attempts", attempts);
 
 });
-
-// viewHighScores.addEventListener("click", function() {
-
-//     main.setAttribute("class", "hidden");
-//     $("scoresModal").modal("show");
-//     console.log(attempts);
-
-//     for (i=0; i < attempts; i++) {
-        
-//         highplayer = localStorage.getItem("player" + i);
-//         hghscore = localStorage.getItem("score" + i);
-//         playerHighScores.textContent = highplayer;
-//         highscores.textContent = hghscore;
-
-//     }
-
-
-
-// });
-
-
-
 

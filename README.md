@@ -27,7 +27,7 @@ For every correct answer there is a time bonus of 3 seconds.
 Player's score will be determined by how much time is remaining on the clock after the completion of all 10 questions.
 
 # Video Demo
-![Video Demo](https://drive.google.com/file/d/1h5BrizxnfwsvaGx1s8MxPtKCtp2jY4GW/preview)
+![https://drive.google.com/file/d/1h5BrizxnfwsvaGx1s8MxPtKCtp2jY4GW/preview](https://drive.google.com/file/d/1h5BrizxnfwsvaGx1s8MxPtKCtp2jY4GW/preview)
 
 # Technology
 The following technologies have been used for this project:

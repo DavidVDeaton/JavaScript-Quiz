@@ -22,13 +22,13 @@ var introC = document.getElementById("c");
 var introD = document.getElementById("d");
 
 // Audio Variables
-var tick = new Audio (src = "audio/aaj_0589_ClockTick01.mp3");
-var start = new Audio (src = "audio/sport_air_horn_reverb.mp3");
-var welcome = new Audio (src = "audio/audeption_countdown_intro_ten_to_zero-the_show_starts_voice_solo_007.mp3");
-var failure = new Audio (src = "audio/zapsplat_explosion_fire_burst_backdraft_004_44091.mp3");
-var winner = new Audio (src = "audio/ftus_american_football_fans_applause_scream_cheer_usa_high_school_238.mp3");
-var correctAudio = new Audio(src = "audio/zapsplat_cartoon_xylophone_short_fast_ascend_002_53041.mp3");
-var incorrectAudio = new Audio(src ="audio/spa_clay_pots_clay_pot_small_break_03.mp3");
+var tick = new Audio (src = "assets/audio/aaj_0589_ClockTick01.mp3");
+var start = new Audio (src = "assets/audio/sport_air_horn_reverb.mp3");
+var welcome = new Audio (src = "assets/audio/audeption_countdown_intro_ten_to_zero-the_show_starts_voice_solo_007.mp3");
+var failure = new Audio (src = "assets/audio/zapsplat_explosion_fire_burst_backdraft_004_44091.mp3");
+var winner = new Audio (src = "assets/audio/ftus_american_football_fans_applause_scream_cheer_usa_high_school_238.mp3");
+var correctAudio = new Audio(src = "assets/audio/zapsplat_cartoon_xylophone_short_fast_ascend_002_53041.mp3");
+var incorrectAudio = new Audio(src ="assets/audio/spa_clay_pots_clay_pot_small_break_03.mp3");
 
 // Quiz Start and Timer Code
 startTimer.addEventListener("click", function() {

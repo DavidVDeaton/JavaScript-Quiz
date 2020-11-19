@@ -26,8 +26,12 @@ For every correct answer there is a time bonus of 3 seconds.
 
 Player's score will be determined by how much time is remaining on the clock after the completion of all 10 questions.
 
-# Video Demo
-![Video Demo](./assets/JavaScript-Quiz.mp4)
+# Screenshots
+![Screenshots](./assets/img/rules.PNG?raw=true)
+
+![Screenshots](./assets/img/questions.PNG?raw=true)
+
+![Screenshots](./assets/img/highscore.PNG?raw=true)
 
 # Technology
 The following technologies have been used for this project:
